@@ -2,59 +2,7 @@
 import streamlit as st
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
-st.markdown(
-    """
-    <style>
-    /* Background and text */
-    .main {
-        background-color: #0A1E3F;  /* Velvet Navy Blue */
-        color: #F5F0E6;             /* Soft Ivory */
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    /* Header and accent text */
-    .css-1v3fvcr h1, .css-1v3fvcr h2, .css-1v3fvcr h3 {
-        color: #D4AF37;  /* Metallic Gold */
-    }
-    /* Widget labels */
-    label, .st-bq {
-        color: #E6D8AD;  /* Pale Gold */
-        font-weight: bold;
-    }
-    /* Buttons */
-    button, .st-bu {
-        background-color: #6C1B3B !important;  /* Burgundy Velvet */
-        color: #F5F0E6 !important;
-        border-radius: 8px;
-        border: none;
-        padding: 8px 16px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-    button:hover, .st-bu:hover {
-        background-color: #D4AF37 !important; /* Metallic Gold hover */
-        color: #0A1E3F !important;
-    }
-    /* Sliders */
-    .stSlider > div > div > div {
-        background-color: #6C1B3B !important; /* Burgundy Velvet track */
-    }
-    /* Slider handle */
-    input[type=range]::-webkit-slider-thumb {
-        background: #D4AF37 !important; /* Gold thumb */
-    }
-    /* Success and Warning text */
-    .success {
-        color: #3DC57B;  /* Emerald Green */
-        font-weight: bold;
-    }
-    .warning {
-        color: #D14343;  /* Warm Red */
-        font-weight: bold;
-    }
-    </style>
-    """, unsafe_allow_html=True
-)
+
 
 # Initialize VADER sentiment analyzer
 analyzer = SentimentIntensityAnalyzer()
