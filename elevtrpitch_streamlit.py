@@ -54,11 +54,11 @@ st.title("elevtrpitch.ai")
 st.caption("Created by Ayaan Patel")
 
 st.markdown("""
-**elevtrpitch.ai** is an AI-powered elevator pitch analyzer.  
-It analyzes your startup pitch using VADER sentiment analysis along with custom business metrics.
+ **elevtrpitch.ai** is an AI-powered elevator pitch analyzer. It analyzes a pitch based on business metrics and an elevator pitch that
+    the user will input, which will be evaluated by the VADER sentiment analysis library.
 """)
 
-st.caption("version 2.3.6")
+st.caption("version 3.3.7")
 
 # Company name input
 company_name = st.text_input("Company Name:", "")
