@@ -2,7 +2,38 @@
 import streamlit as st
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
+st.markdown(
+    """
+    <style>
+    /* Slider track */
+    div[data-baseweb="slider"] > div > div > div {
+        background-color: #B0C4DE !important;
+    }
+    /* Slider handle */
+    div[data-baseweb="slider"] input[type="range"]::-webkit-slider-thumb {
+        background-color: #B0C4DE !important;
+        border: 2px solid #7A8CA6;
+    }
+    div[data-baseweb="slider"] input[type="range"]::-moz-range-thumb {
+        background-color: #B0C4DE !important;
+        border: 2px solid #7A8CA6;
+    }
 
+    /* Buttons */
+    button[data-testid="stButton"] {
+        background-color: #B0C4DE !important;
+        color: #000000 !important;
+        border: none !important;
+        font-weight: 600 !important;
+    }
+    button[data-testid="stButton"]:hover {
+        background-color: #8A9BBB !important;
+        color: #000000 !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 
 # Initialize VADER sentiment analyzer
 analyzer = SentimentIntensityAnalyzer()
@@ -24,15 +55,15 @@ For the investment amount slider, drag it to select the amount of investment you
 """)
 
 # Sliders for metrics
-market_size = st.slider("Market Size:", 0.0, 10.0, 5.0, 0.1)
-product_uniqueness = st.slider("Product Uniqueness:", 0.0, 10.0, 5.0, 0.1)
-team_experience = st.slider("Team Experience:", 0.0, 10.0, 5.0, 0.1)
-revenue_model = st.slider("Revenue Model Success Potential:", 0.0, 10.0, 5.0, 0.1)
-sales_till_date = st.slider("Sales Till Date:", 0.0, 10.0, 5.0, 0.1)
-investment_asked = st.slider("Amount of Investment Asked:", 0, 1000000, 500000, 10000)
+market_size = st.slider("**Market Size**:", 0.0, 10.0, 5.0, 0.1)
+product_uniqueness = st.slider("**Product Uniqueness**:", 0.0, 10.0, 5.0, 0.1)
+team_experience = st.slider("**Team Experience**:", 0.0, 10.0, 5.0, 0.1)
+revenue_model = st.slider("**Revenue Model Success Potential**:", 0.0, 10.0, 5.0, 0.1)
+sales_till_date = st.slider("**Sales Till Date**:", 0.0, 10.0, 5.0, 0.1)
+investment_asked = st.slider("**Amount of Investment Asked**:", 0, 1000000, 500000, 10000)
 
 # Pitch input
-pitch = st.text_area("Your Pitch:", height=150, placeholder="Type your startup pitch here...")
+pitch = st.text_area("**Your Pitch**:", height=150, placeholder="Type your startup pitch here...")
 
 st.markdown("### Sentiment Analysis")
 if pitch.strip():
