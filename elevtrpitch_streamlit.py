@@ -7,6 +7,10 @@ analyzer = SentimentIntensityAnalyzer()
 
 st.title("elevtrpitch.ai")
 st.caption("Created by Ayaan Patel")
+st.markdown("""
+    elevtrpitch.ai is an AI-powered elevator pitch analyzer. It analyzes a pitch based on business metrics and an elevator pitch that
+    the user will input, which will be evaluated by the VADER sentiment analysis library.
+""") 
 
 # Company name input
 company_name = st.text_input("Company Name:", "")
@@ -28,7 +32,7 @@ investment_asked = st.slider("Amount of Investment Asked:", 0, 1000000, 500000, 
 # Pitch input
 pitch = st.text_area("Your Pitch:", height=150, placeholder="Type your startup pitch here...")
 
-st.markdown("### Sentiment Analysis (VADER)")
+st.markdown("### Sentiment Analysis")
 if pitch.strip():
     vs = analyzer.polarity_scores(pitch)
     compound = vs['compound']
